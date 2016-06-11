@@ -9,20 +9,27 @@
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/nested"
         android:layout_gravity="fill_vertical">
+
         <RelativeLayout
             android:layout_width="match_parent"
+            android:id="@+id/nestedRel"
             android:layout_height="800dp">
 
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="130dp"
                 android:layout_height="wrap_content"
-                android:text="Download Notes"
+                android:text="Read Notes"
+                android:background="@color/colorPrimary"
+                android:textColor="#ffffff"
                 android:id="@+id/download"
-                android:layout_marginTop="600dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="550dp"
                 android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true" />
+                android:layout_alignStart="@+id/description"
+                android:layout_alignParentEnd="true" />
 
             <TextView
                 android:layout_width="500dp"
@@ -30,22 +37,20 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented,[13] and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers write once, run anywhere (WORA),[14] meaning that compiled Java code can run on all platforms that support Java without the need for recompilation.[15] Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture"
                 android:id="@+id/description"
-                android:layout_marginBottom="49dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginStart="10dp"
                 android:layout_alignBottom="@+id/download"
-                android:layout_centerHorizontal="true" />
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="51dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Lecturer:  "
+                android:layout_marginBottom="0dp"
                 android:id="@+id/textView3"
                 android:layout_above="@+id/description"
-                android:layout_toLeftOf="@+id/download"
-                android:layout_toStartOf="@+id/download"
-                android:layout_marginBottom="53dp" />
+                android:layout_alignStart="@+id/description" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -54,8 +59,20 @@
                 android:text="Large Text"
                 android:id="@+id/lecturer"
                 android:layout_alignTop="@+id/textView3"
-                android:layout_alignLeft="@+id/download"
-                android:layout_alignStart="@+id/download" />
+                android:layout_toEndOf="@+id/textView3" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Download"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="5dp"
+                android:id="@+id/local"
+                android:background="@color/colorPrimary"
+                android:textColor="#ffffff"
+                android:layout_below="@+id/download"
+                android:layout_alignStart="@+id/download"
+                android:layout_alignParentEnd="true" />
 
         </RelativeLayout>
 

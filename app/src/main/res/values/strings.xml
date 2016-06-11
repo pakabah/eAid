@@ -3,4 +3,11 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="courses">
+        <item>Bsc Computer Engineering</item>
+        <item>Bsc Telecommunication Engineering</item>
+        <item>Bsc Administration</item>
+        <item>Bsc Procurement and Logistics</item>
+    </string-array>
 </resources>
