@@ -36,7 +36,6 @@ public class Notes extends android.support.v4.app.Fragment  {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
-    RecyclerView recyclerView;
 
 
     public Notes() {
@@ -52,7 +51,7 @@ public class Notes extends android.support.v4.app.Fragment  {
      * @return A new instance of fragment Notes.
      */
     // TODO: Rename and change types and number of parameters
-    public static Notes newInstance(String param1, String param2) {
+    private static Notes newInstance(String param1, String param2) {
         Notes fragment = new Notes();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
@@ -75,7 +74,7 @@ public class Notes extends android.support.v4.app.Fragment  {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_notes, container, false);
-        recyclerView = (RecyclerView) view.findViewById(R.id.relNotes);
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.relNotes);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         NotesAdapter notesAdapter = new NotesAdapter(initializeData());
@@ -83,7 +82,7 @@ public class Notes extends android.support.v4.app.Fragment  {
         return view;
     }
 
-    public List<NotesTemplate> initializeData()
+    private List<NotesTemplate> initializeData()
     {
 //        List<NotesTemplate> notesTemplates = new ArrayList<>();
 //        notesTemplates.add(new NotesTemplate("Year 1","Engineering Math", "Mr. A.K Appiah"));

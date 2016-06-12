@@ -23,7 +23,7 @@ import java.util.Random;
  */
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> {
 
-    List<NotesTemplate> notesTemplates;
+    private List<NotesTemplate> notesTemplates;
 
     public NotesAdapter(List<NotesTemplate> notesTemplates)
     {

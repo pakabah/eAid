@@ -3,6 +3,12 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="download">Download</string>
+    <string name="computer">Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented,[13] and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers write once, run anywhere (WORA),[14] meaning that compiled Java code can run on all platforms that support Java without the need for recompilation.[15] Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture</string>
+    <string name="lecturer">Lecturer:</string>
+    <string name="read_notes">Read Notes</string>
+    <string name="engineering_math">Engineering Math</string>
+    <string name="year_2">Year 2</string>
 
     <string-array name="courses">
         <item>Bsc Computer Engineering</item>

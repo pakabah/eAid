@@ -9,6 +9,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -33,14 +34,14 @@ import java.util.List;
 
 public class DetailNotes extends AppCompatActivity {
 
-    String title;
-    String code;
+    private String title;
+    private String code;
     TextView lecturer;
     TextView description;
     Button download,local;
     String url;
     private ProgressDialog pDialog;
-    public static final int progress_bar_type = 0;
+    private static final int progress_bar_type = 0;
 
 
     @Override
@@ -73,6 +74,7 @@ public class DetailNotes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), PdfRen.class);
+                intent.putExtra("code",code);
                 startActivity(intent);
             }
         });
@@ -95,7 +97,46 @@ public class DetailNotes extends AppCompatActivity {
                 {
                     if(isExternalStorageWritable())
                     {
-                        url = "http://162.243.96.232/pdf/scalingphp-sample.pdf";
+                        switch(code)
+                        {
+                            case "ICT 234":
+                                url = "http://162.243.96.232/pdf/01_Installation.pdf";
+                                break;
+                            case "INF 281":
+                                url = "http://162.243.96.232/pdf/scalingphp-sample.pdf";
+                                break;
+                            case "INF 192":
+                                url = "http://162.243.96.232/pdf/01 Introduction.pdf";
+                                break;
+                            case "GTUB 209":
+                                url = "http://162.243.96.232/pdf/MIS_Lesson1.pdf";
+                                break;
+                            case "ICT 363":
+                                url = "http://162.243.96.232/pdf/scalingphp-sample.pdf";
+                                break;
+                            case "IT 452":
+                                url = "http://162.243.96.232/pdf/Graph_Theory.pdf";
+                                break;
+                            case "ICT 333":
+                                url = "http://162.243.96.232/pdf/02_Retrieving_Data.pdf";
+                                break;
+                            case "INF 372":
+                                url = "http://162.243.96.232/pdf/02 - Recognizing Opportunities and Generating Ideasxx-1-1.pdf";
+                                break;
+                            case "ICT 314":
+                                url = "http://162.243.96.232/pdf/Lecture 2.pdf";
+                                break;
+                            case "ICT 464":
+                                url = "http://162.243.96.232/pdf/MIS_Lesson1.pdf";
+                                break;
+                            case "IT305":
+                                url = "http://162.243.96.232/pdf/Lecture 3.pdf";
+                                break;
+                            case "INF 162":
+                                url = "http://162.243.96.232/pdf/Competitive Advantage with IS.pdf";
+                                break;
+
+                        }
                         DownloadFile(getAlbumStorageDir());
                     }
                     else
@@ -125,25 +166,19 @@ public class DetailNotes extends AppCompatActivity {
         }
     }
 
-    public boolean isExternalStorageWritable() {
+    private boolean isExternalStorageWritable() {
         String state = Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED.equals(state)) {
-            return true;
-        }
-        return false;
+        return Environment.MEDIA_MOUNTED.equals(state);
     }
 
     /* Checks if external storage is available to at least read */
     public boolean isExternalStorageReadable() {
         String state = Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED.equals(state) ||
-                Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
-            return true;
-        }
-        return false;
+        return Environment.MEDIA_MOUNTED.equals(state) ||
+                Environment.MEDIA_MOUNTED_READ_ONLY.equals(state);
     }
 
-    public File getAlbumStorageDir() {
+    private File getAlbumStorageDir() {
         // Get the directory for the user's public pictures directory.
         File file = new File(Environment.getExternalStoragePublicDirectory(
                 Environment.DIRECTORY_DOWNLOADS), "pdf");
@@ -155,7 +190,7 @@ public class DetailNotes extends AppCompatActivity {
 
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch(requestCode)
         {
@@ -164,7 +199,6 @@ public class DetailNotes extends AppCompatActivity {
                 {
                     if(isExternalStorageWritable())
                     {
-                        url = "http://162.243.96.232/pdf/scalingphp-sample.pdf";
                         DownloadFile(getAlbumStorageDir());
                     }
                     else
@@ -209,7 +243,7 @@ public class DetailNotes extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public  void DownloadFile(File directory) {
+    private void DownloadFile(File directory) {
 
          class Downloader extends AsyncTask<File, Void, String> {
 
