@@ -9,8 +9,21 @@
     <string name="read_notes">Read Notes</string>
     <string name="engineering_math">Engineering Math</string>
     <string name="year_2">Year 2</string>
+    <string name="type_message_here">Type Message Here</string>
+    <string name="message">Message:</string>
+    <string name="send">Send</string>
+    <string name="username">Username</string>
+    <string name="to">To:</string>
+    <string name="_50">50%</string>
+    <string name="choose_another_course">Choose another Course</string>
+    <string name="engineering_maths_math_256">Engineering Maths Math 256</string>
+    <string name="finish">Finish</string>
+    <string name="retake_quiz">Retake Quiz</string>
+    <string name="you_scored">You Scored:</string>
+    <string name="type_message_her">Type Message Here</string>
 
     <string-array name="courses">
+        <item>Bsc Information Technology</item>
         <item>Bsc Computer Engineering</item>
         <item>Bsc Telecommunication Engineering</item>
         <item>Bsc Administration</item>

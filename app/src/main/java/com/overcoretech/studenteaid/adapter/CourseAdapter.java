@@ -67,6 +67,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
         TextView CourseName;
         CardView cardView;
 
+
         public ViewHolder(View itemView) {
             super(itemView);
             Year = (TextView) itemView.findViewById(R.id.year);

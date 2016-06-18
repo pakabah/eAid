@@ -1,10 +1,13 @@
 package com.overcoretech.studenteaid.views;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -16,6 +19,7 @@ import com.overcoretech.studenteaid.template.CourseTemplate;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Random;
 
 public class ScoreSummary extends AppCompatActivity {
 
@@ -43,7 +47,15 @@ public class ScoreSummary extends AppCompatActivity {
         CourseTemplate courseTemplate = dbHelper.getCourse(code);
 
         title.setText(courseTemplate.courseName);
-        mScore = "3/5";
+        SharedPreferences sharedPreferences = getSharedPreferences("data", Context.MODE_PRIVATE);
+        int Score = sharedPreferences.getInt("currentScore", 0);
+        Random rand = new Random();
+
+        // nextInt is normally exclusive of the top value,
+        // so add 1 to make it inclusive
+        int randomNum = rand.nextInt((5 - 1) + 1) + 1;
+        Log.e("Final Score", Score+"");
+        mScore = randomNum+"/5";
         score.setText(mScore);
 
         Calendar c = Calendar.getInstance();
@@ -69,6 +81,8 @@ public class ScoreSummary extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), StartPasco.class);
+                intent.putExtra("code", code);
+                intent.putExtra("title", title.getText().toString());
                 startActivity(intent);
                 finish();
             }

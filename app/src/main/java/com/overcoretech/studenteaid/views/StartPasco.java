@@ -48,7 +48,7 @@ public class StartPasco extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.relQuestions);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
-        QuestionsAdapter questionsAdapter = new QuestionsAdapter(initializeData(code));
+        QuestionsAdapter questionsAdapter = new QuestionsAdapter(initializeData(code),getApplicationContext());
         recyclerView.setAdapter(questionsAdapter);
 
         markFinish = (FloatingActionButton) findViewById(R.id.markFinish);

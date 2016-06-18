@@ -3,7 +3,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     card_view:cardCornerRadius="8dp"
     android:orientation="vertical"
-    android:layout_height="250dp"
+    android:layout_height="270dp"
     android:layout_margin="5dp"
     android:layout_width="match_parent">
 
@@ -37,46 +37,56 @@
             android:layout_marginLeft="10dp"
             android:layout_marginStart="10dp" />
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Answer One"
-            android:id="@+id/radioButton2"
-            android:layout_marginTop="51dp"
-            android:checked="false"
-            android:layout_below="@+id/question_number"
-            android:layout_alignLeft="@+id/question_number"
-            android:layout_alignStart="@+id/question_number" />
 
         <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Answer Two"
-            android:id="@+id/radioButton"
-            android:layout_below="@+id/radioButton2"
-            android:layout_alignLeft="@+id/radioButton2"
-            android:layout_alignStart="@+id/radioButton2"
-            android:checked="false" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Answer One"
+                android:id="@+id/radioButton2"
+                android:layout_marginTop="51dp"
+                android:layout_below="@+id/question_number"
+                android:layout_alignLeft="@+id/question_number"
+                android:layout_alignStart="@+id/question_number" />
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Answer Three"
-            android:id="@+id/radioButton3"
-            android:layout_below="@+id/radioButton"
-            android:layout_alignLeft="@+id/radioButton"
-            android:layout_alignStart="@+id/radioButton"
-            android:checked="false" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Answer Two"
+                android:id="@+id/radioButton"
+                android:layout_below="@+id/radioButton2"
+                android:layout_alignLeft="@+id/radioButton2"
+                android:layout_alignStart="@+id/radioButton2"
+                />
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Answer Four"
-            android:id="@+id/radioButton4"
-            android:layout_below="@+id/radioButton3"
-            android:layout_alignLeft="@+id/radioButton3"
-            android:layout_alignStart="@+id/radioButton3"
-            android:checked="false" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Answer Three"
+                android:id="@+id/radioButton3"
+                android:layout_below="@+id/radioButton"
+                android:layout_alignLeft="@+id/radioButton"
+                android:layout_alignStart="@+id/radioButton"
+                />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Answer Four"
+                android:id="@+id/radioButton4"
+                android:layout_below="@+id/radioButton3"
+                android:layout_alignLeft="@+id/radioButton3"
+                android:layout_alignStart="@+id/radioButton3" />
+
+        <Button
+            android:text="Clear All"
+            android:layout_width="95dp"
+            android:layout_height="40dp"
+            android:id="@+id/button3"
+            android:layout_weight="1"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="17dp" />
+
 
     </RelativeLayout>
 

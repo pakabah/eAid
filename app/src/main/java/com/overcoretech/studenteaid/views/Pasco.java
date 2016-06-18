@@ -86,21 +86,8 @@ public class Pasco extends android.support.v4.app.Fragment {
 
     public List<CourseTemplate> initializeData()
     {
-//        List<CourseTemplate> courseTemplates = new ArrayList<>();
-//
-//        courseTemplates.add(new CourseTemplate("Engineering Math", "Year 1"));
-//        courseTemplates.add(new CourseTemplate("Numerical Analysis", "Year 4"));
-//        courseTemplates.add(new CourseTemplate("Data Structures & Algorithms", "Year 2"));
-//        courseTemplates.add(new CourseTemplate("Computer Vision", "Year 4"));
-//        courseTemplates.add(new CourseTemplate("Basic Mechanics", "Year 1"));
-//        courseTemplates.add(new CourseTemplate("Calculus I", "Year 3"));
-//        courseTemplates.add(new CourseTemplate("Fault Tolerance", "Year 4"));
-//        courseTemplates.add(new CourseTemplate("Distributed Systems", "Year 4"));
-//        courseTemplates.add(new CourseTemplate("Artificial Intelligence", "Year 4"));
-
         DBHelper dbHelper = new DBHelper(getActivity().getApplicationContext());
         return dbHelper.getCourses();
-//        return courseTemplates;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

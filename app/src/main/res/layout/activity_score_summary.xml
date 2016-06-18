@@ -1,24 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.overcoretech.studenteaid.views.ScoreSummary">
+    tools:context="com.overcoretech.studenteaid.views.ScoreSummary"
+    android:id="@+id/constraintLayout3">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appBarLayout"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintLeft_toLeftOf="@+id/constraintLayout3"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout3"
+        tools:layout_constraintTop_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/constraintLayout3"
+        tools:layout_constraintRight_creator="1">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:layout_scrollFlags="scroll|enterAlways" />
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:layout_constraintLeft_toLeftOf="@+id/appBarLayout"
+            tools:layout_constraintLeft_creator="1"
+            app:layout_constraintTop_toTopOf="@+id/appBarLayout"
+            tools:layout_constraintTop_creator="1"
+            app:layout_constraintRight_toRightOf="@+id/appBarLayout"
+            tools:layout_constraintRight_creator="1" />
 
     </android.support.design.widget.AppBarLayout>
 
@@ -26,65 +39,84 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Engineering Maths Math 256"
+        android:text="@string/engineering_maths_math_256"
         android:id="@+id/title"
-        android:textSize="30dp"
-        android:layout_marginTop="44dp"
-        android:layout_below="@+id/appBarLayout"
-        android:layout_centerHorizontal="true" />
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="@+id/constraintLayout3"
+        android:layout_marginStart="11dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout3"
+        android:layout_marginTop="100dp"
+        tools:layout_constraintTop_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/score"
+        android:layout_marginBottom="97dp"
+        tools:layout_constraintBottom_creator="1" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="You Scored:"
+        android:text="@string/you_scored"
         android:id="@+id/textView2"
-        android:layout_marginTop="49dp"
-        android:layout_below="@+id/title"
-        android:layout_centerHorizontal="true" />
+        app:layout_constraintRight_toRightOf="@+id/score"
+        android:layout_marginEnd="16dp"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/score"
+        android:layout_marginBottom="28dp"
+        tools:layout_constraintBottom_creator="1" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="50%"
+        android:text="@string/_50"
         android:id="@+id/score"
-        android:textSize="70dp"
-        android:layout_marginTop="27dp"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true" />
+        android:textSize="70sp"
+        app:layout_constraintLeft_toLeftOf="@+id/title"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout3"
+        android:layout_marginTop="233dp"
+        tools:layout_constraintTop_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/title"
+        tools:layout_constraintRight_creator="1" />
 
     <Button
-        android:layout_width="305dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Retake Quiz"
+        android:text="@string/retake_quiz"
         android:id="@+id/retake"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="173dp" />
+        app:layout_constraintLeft_toLeftOf="@+id/another"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/another"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/another"
+        android:layout_marginBottom="12dp"
+        tools:layout_constraintBottom_creator="1" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Choose another Course"
+        android:text="@string/choose_another_course"
         android:id="@+id/another"
-        android:layout_marginTop="60dp"
-        android:layout_alignTop="@+id/retake"
-        android:layout_alignLeft="@+id/retake"
-        android:layout_alignStart="@+id/retake"
-        android:layout_alignRight="@+id/retake"
-        android:layout_alignEnd="@+id/retake" />
+        app:layout_constraintLeft_toLeftOf="@+id/finish"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/finish"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/finish"
+        android:layout_marginBottom="20dp"
+        tools:layout_constraintBottom_creator="1" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Finish"
+        android:text="@string/finish"
         android:id="@+id/finish"
-        android:layout_below="@+id/another"
-        android:layout_alignLeft="@+id/another"
-        android:layout_alignStart="@+id/another"
-        android:layout_marginTop="20dp"
-        android:layout_alignRight="@+id/another"
-        android:layout_alignEnd="@+id/another" />
+        app:layout_constraintLeft_toLeftOf="@+id/constraintLayout3"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/constraintLayout3"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout3"
+        android:layout_marginBottom="44dp"
+        tools:layout_constraintBottom_creator="1" />
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>
